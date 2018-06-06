@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pe.com.test.seleniumwd.CategoriaWebDriverTest">
+      <class name="pe.com.test.semana10.AutorControllerTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="insertarCategoria_FlujoBasico"/>
-          <include name="insertarCategoria_FlujoAlternativo"/>
-          <include name="setUp"/>
+          <include name="probarInsertarAutor"/>
+          <include name="eliminarAutorDebeDarError"/>
+          <include name="AgregarAutorValidarSiExiste"/>
+          <include name="probarListarEmpleado"/>
         </methods>
-      </class> <!-- pe.com.test.seleniumwd.CategoriaWebDriverTest -->
+      </class> <!-- pe.com.test.semana10.AutorControllerTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

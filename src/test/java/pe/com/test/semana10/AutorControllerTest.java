@@ -5,22 +5,36 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import junit.framework.Assert;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+
 import pe.com.semana10.controller.AutorController;
 import pe.com.semana10.model.Autor;
 import pe.com.semana10.service.AutorService;
 import pe.com.semana10.service.AutorServiceImpl;
 
-@SuppressWarnings({ "unused", "deprecation" })
-@RunWith(SpringRunner.class)
+//@SuppressWarnings({ "unused", "deprecation" })
+@RunWith( SpringJUnit4ClassRunner.class )
+@ContextConfiguration
 @SpringBootTest
+@DataJpaTest
 public class AutorControllerTest {
 
-	private static AutorController autorcontroller;
-	AutorService repo;
+	//@Autowired
+	AutorService repo = new AutorServiceImpl();
+	
+	@BeforeClass
+	public void before() {	
+		
+	}
+	
 	@Test
 	public void contextLoads() {
 	}
