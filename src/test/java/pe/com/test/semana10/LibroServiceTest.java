@@ -8,19 +8,15 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import junit.framework.Assert;
-import pe.com.semana10.controller.AutorController;
+import org.junit.Assert;
 import pe.com.semana10.controller.LibroController;
-import pe.com.semana10.model.Autor;
 import pe.com.semana10.model.Libro;
-import pe.com.semana10.service.AutorServiceImpl;
 import pe.com.semana10.service.LibroService;
-import pe.com.semana10.service.LibroServiceImpl;
 
-@SuppressWarnings("unused")
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class LibroControllerTest {
+public class LibroServiceTest {
 
 	private static LibroController librocontroller;
 	LibroService repo;
@@ -90,6 +86,7 @@ public class LibroControllerTest {
 			}	
 	  }
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	  public void ProbandoModeloLibro() {
 		

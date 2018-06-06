@@ -8,17 +8,11 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import junit.framework.Assert;
-import pe.com.semana10.controller.AutorController;
-import pe.com.semana10.model.Autor;
+import org.junit.Assert;
 import pe.com.semana10.model.Editorial;
-import pe.com.semana10.model.Genero;
-import pe.com.semana10.service.AutorServiceImpl;
 import pe.com.semana10.service.EditorialService;
-import pe.com.semana10.service.EditorialServiceImpl;
-import pe.com.semana10.service.GeneroServiceImpl;
 
-@SuppressWarnings("unused")
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EditorialServiceTest {

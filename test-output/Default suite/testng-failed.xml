@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="pe.com.test.semana10.AutorControllerTest">
+      <class name="pe.com.test.semana10.LibroServiceTest">
         <methods>
-          <include name="probarInsertarAutor"/>
-          <include name="eliminarAutorDebeDarError"/>
-          <include name="AgregarAutorValidarSiExiste"/>
-          <include name="probarListarEmpleado"/>
+          <include name="AgregarLibroValidarSiExiste"/>
+          <include name="probarListarLibro"/>
+          <include name="probarInsertarLibro"/>
+          <include name="ProbandoModeloLibro"/>
         </methods>
-      </class> <!-- pe.com.test.semana10.AutorControllerTest -->
+      </class> <!-- pe.com.test.semana10.LibroServiceTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
