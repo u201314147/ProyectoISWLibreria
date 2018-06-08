@@ -36,17 +36,17 @@
 			<div class="form-group">
               <label for="campo01">Nombres</label>
               <input  type="text" th:field="*{nombres}" class="form-control" id="campo01" placeholder="Texto" />
-              <div class="alert alert-danger" th:if="${#fields.hasErrors('nombres')}" th:errors="*{nombres}"></div>
+              <div class="alert alert-danger" id="mensaje1" th:if="${#fields.hasErrors('nombres')}" th:errors="*{nombres}"></div>
             </div>
             <div class="form-group">
               <label for="campo01">Apellidos</label>
               <input  type="text" th:field="*{apellidos}" class="form-control" id="campo01" placeholder="Texto" />
-              <div class="alert alert-danger" th:if="${#fields.hasErrors('apellidos')}" th:errors="*{apellidos}"></div>
+              <div class="alert alert-danger" id="mensaje2" th:if="${#fields.hasErrors('apellidos')}" th:errors="*{apellidos}"></div>
             </div>
             <div class="form-group">
               <label for="campo01">Nacionalidad</label>
               <input  type="text" th:field="*{nacionalidad}" class="form-control" id="campo01" placeholder="Texto" />
-              <div class="alert alert-danger" th:if="${#fields.hasErrors('nacionalidad')}" th:errors="*{nacionalidad}"></div>
+              <div class="alert alert-danger" id="mensaje3" th:if="${#fields.hasErrors('nacionalidad')}" th:errors="*{nacionalidad}"></div>
             </div>
 			<div><input type="submit" id="guardarButton" value="Guardar" /> </div>
 			</form>

@@ -30,7 +30,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 					)
 			})
 
-//XYZ
+
 public class Autor {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

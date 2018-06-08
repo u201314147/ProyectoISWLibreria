@@ -70,7 +70,35 @@ public class LibroServiceImpl implements LibroService {
 		return  repositorioInterface.buscarPorGenero(editorial);
 	}
 
-	
+	@Override
+	public boolean actualizar(Libro libro) {
+		// TODO Auto-generated method stub
+		boolean flag = false;
+		try {
+			repositorioInterface.save(libro);
+			flag = true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		
+		return flag;
+	}
+
+	@Override
+	public boolean eliminar(int id) {
+		// TODO Auto-generated method stub
+		boolean flag = false;
+		try {
+			repositorioInterface.delete(id);
+			flag = true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		
+		return flag;
+	}
 
 
 }

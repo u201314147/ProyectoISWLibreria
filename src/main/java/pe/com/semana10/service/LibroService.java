@@ -25,4 +25,8 @@ public interface LibroService {
 	public List<Libro> buscarPorEditorial(int editorial);
 	public Libro buscarPorID(int id);
 	
+	public boolean actualizar(Libro libro);
+	
+	public boolean eliminar(int id);
+	
 }

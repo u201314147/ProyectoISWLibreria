@@ -7,10 +7,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import pe.com.semana10.model.Autor;
 import pe.com.semana10.model.Libro;
 import pe.com.semana10.service.AutorService;
 import pe.com.semana10.service.EditorialService;
@@ -80,5 +82,51 @@ public class LibroController {
 		
 		
 		return "admin/libro_listado";
+	}
+	
+	@RequestMapping(value="/admin/libro/editar/{id}")
+	public String editar(@PathVariable int id, Model model, RedirectAttributes objRedir){
+		
+		model.addAttribute("generos", generoService.listado());
+		model.addAttribute("editoriales", editorialService.listado());
+		model.addAttribute("autores", autorService.listado());
+	
+		Libro objLibro = libroService.buscarPorID(id);
+		if(objLibro == null){
+			objRedir.addFlashAttribute("mensaje", "Ocurrió un error");
+			return "redirect:/admin/libro/listado";
+		}else{
+			model.addAttribute("libro", objLibro);
+			return "admin/libro_editar";
+		}
+	}
+	
+	@RequestMapping(value="/admin/libro/actualizar", method=RequestMethod.POST)
+	public String actualizar(@ModelAttribute Libro objLibro, Model model, RedirectAttributes objRedir){
+		boolean flag = libroService.actualizar(objLibro);
+		
+		if(flag){
+			objRedir.addFlashAttribute("mensaje", "Libro actualizado");
+			return "redirect:/admin/libro/listado";
+			//return "libro_listado";
+		}else{
+			objRedir.addFlashAttribute("mensaje", "Ocurrió un error");
+			return "redirect:/admin/libro/listado";
+		}
+	}
+	
+	@RequestMapping(value="/admin/libro/eliminar/{id}")
+	public String eliminar(@PathVariable int id, Model model, RedirectAttributes objRedir){
+		boolean flag;
+		flag = libroService.eliminar(id);
+		if(flag){
+			//model.addAttribute("mensaje", "Libro eliminado");
+			objRedir.addFlashAttribute("mensaje", "Libro eliminado");
+			return "redirect:/admin/libro/listado";
+		}else{
+			//model.addAttribute("mensaje", "Ocurrió un error");
+			objRedir.addFlashAttribute("mensaje", "Ocurrió un error");
+			return "redirect:/admin/libro/listado";
+		}
 	}
 }

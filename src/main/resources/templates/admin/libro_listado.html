@@ -84,7 +84,7 @@
         		Buscar por precio: 
         		<form th:object="${libro}" method="get" action="/admin/libro/buscarPorPrecio">
         			<input th:field="*{precio}"  />
-        			<button type="submit" class="btn btn-default">Buscar</button>
+        			<button type="submit" id="buscarPrecio" class="btn btn-default">Buscar</button>
         		</form>
         	</div>
 			<table class="table">
@@ -107,8 +107,10 @@
 						<td th:text="${libro.genero.nombre}"></td>
 						<td th:text="${libro.editorial.nombre}"></td>
 						<td>
-							<a>eliminar</a> 
-							<a>editar</a>
+						
+							<a th:href="@{'/admin/libro/eliminar/' + ${libro.id}}">eliminar</a> 
+							<a th:href="@{'/admin/libro/editar/' + ${libro.id}}">editar</a>
+						
 							<a id="ajax" data="${libro.id}">Autores</a>
 						</td>
 					</tr>

@@ -16,6 +16,9 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import pe.com.semana10.model.Autor;
 
 @Entity
@@ -62,8 +65,11 @@ public class Libro {
 		this.autores = autores;
 	}
 	String titulo;
+	
 	double precio;
+	
 	String isbn;
+	
 	String sinopsis;
 	int nuevo;
 	
