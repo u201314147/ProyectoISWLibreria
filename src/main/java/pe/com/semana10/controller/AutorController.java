@@ -29,6 +29,8 @@ public class AutorController {
 	public String listado(Model model ){
 		
 		List<Autor> autores = autorService.listado();		
+		model.addAttribute("autor", new Autor());
+		
 		model.addAttribute("listadoAutores", autores);
 		
 		return "admin/autor_listado";

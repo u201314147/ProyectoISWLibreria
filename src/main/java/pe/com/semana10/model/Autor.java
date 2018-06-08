@@ -27,7 +27,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 			@NamedQuery(
 					name="Autor.buscarPorNombre",
 					query="select r from Autor r where r.nombres = ?1"
-					),
+					)
 			})
 
 //XYZ

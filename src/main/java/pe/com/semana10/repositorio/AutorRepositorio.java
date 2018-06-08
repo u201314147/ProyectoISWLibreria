@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import pe.com.semana10.model.Autor;
-import pe.com.semana10.model.Libro;
 
 @Repository
 public interface AutorRepositorio extends JpaRepository<Autor, Integer> {
